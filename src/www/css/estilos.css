@@ -233,4 +233,18 @@ img#imagenJuego{
     
 }
 
+form#formulario{
 
+    width: 1100px;
+    height: 400px;
+    margin: auto;
+    background-color: rgba(20, 21, 41, 0.788);
+
+}
+
+
+div#divImagen::before{
+
+    content: "Selecciona una imagen";
+    
+}
