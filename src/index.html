@@ -11,12 +11,14 @@
     </head>
     <body>
         <header>
-            <img src="../src/www/img/circulo.png" id="prueba">
+            <img src="../src/www/img/logopg.PNG" id="prueba">
+            <button id="volver">Volver</button>
+            <button id="anadirJuego">+</button>
         </header>
         <main>
             <div id="divPrincipal">
                 <div>
-                    <img src="../src/www/img/logo.png" id="piepagina">
+                    <img src="../src/www/img/logo.PNG" id="piepagina">
                 </div>
                 <div id="divIntroduccion">
                     <p>
@@ -25,11 +27,122 @@
                     <p id="fraseJugar">
                         ¿A qúe esperas para jugar?
                     </p>
-                    <a href="../src/www/crud.html">
-                        <button id="consultarJuegos">Comenzar</button>
-                    </a>
+                    <button id="consultarJuegos">Comenzar</button>
+                </div>
+            </div>
+            <div id="divFormulario">
+                <form id="formulario">
+                    <h2 id="tituloFormulario">Añadir juego</h2>
+                    <input type="file" id="imagenJuego"/>
+                    <label id="labelNombre">Nombre</label>
+                    <br><br>
+                    <input type="text" name="nombre" id="inputNombre"/>
+                    <br><br>
+                    <label id="labelPrecio">Precio de venta</label>
+                    <br><br>
+                    <input type="number" id="inputPrecio"/>
+                    <br><br>
+                    <label id="labelFecha">Fecha de lanzamiento</label>
+                    <br><br>
+                    <input type="date" id="inputFecha"/>
+                    <br><br>
+                    <label id="labelDescripcion">Descripción</label>
+                    <br><br>
+                    <textarea id="areaDescripcion"></textarea>
+                    <br><br>
+                    <label id="labelRoles">Roles del juego</label>
+                    <br><br>
+                    <div id="divCheck">
+                        <span class="roles">Acción</span>
+                        <input type="checkbox" class="checkbox"/>
+                        <span class="roles">Aventura</span>
+                        <input type="checkbox" class="checkbox"/>
+                        <span class="roles">Multijugador</span>
+                        <input type="checkbox" class="checkbox"/>
+                    </div>
+                    <br><br>
+                    <label id="labelSelect">¿Quieres publicar tu juego ahora?</label>
+                    <br><br>
+                    <span id="publicarSi">Si, publicar ahora</span>
+                    <input type="radio">
+                    <br><br>
+                    <span id="publicarNo">No, más tarde</span>
+                    <input type="radio"/>
+                    <br><br><br><br>
+                </form>
+                <button id="btnAnadir">Añadir</button>
+            </div>
+            <div id="divJuegos">
+                <input type="text" id="buscadorJuegos" placeholder="🔍︎   Buscar juego"/>
+                <div id="divPrueba">
+                    <img src="../src/www/img/7days.jfif" id="imagenJuego">
+                    <p id="pNombre">
+                        7 days to die
+                    </p>
+                    <p id="pFecha">
+                        13 de diciembre de 2013
+                    </p>
+                    <p id="pRol">
+                        Acción, supervivencia
+                    </p>
+                    <div class="divBotones">
+                        <span id="borrar">
+                            <img src="../src/www/img/borrar.svg" class="botones">
+                        </span>                     
+                        <span id="jugar">JUGAR</span>
+                        <span id="modificar">
+                            <img src="../src/www/img/modificar.svg" class="botones">
+                        </span>                        
+                    </div>
+                </div>
+                <!---->
+                <div id="divPrueba">
+                    <img src="../src/www/img/counter.jpg" id="imagenJuego">
+                    <p id="pNombre">
+                        Counter Strike: Global Offensive
+                    </p>
+                    <p id="pFecha">
+                        13 de diciembre de 2013
+                    </p>
+                    <p id="pRol">
+                        Acción, disparo
+                    </p>
+                    <div class="divBotones">
+                        <span id="borrar">
+                            <img src="../src/www/img/borrar.svg" class="botones">
+                        </span>                     
+                        <span id="jugar">JUGAR</span>
+                        <span id="modificar">
+                            <img src="../src/www/img/modificar.svg" class="botones">
+                        </span>                        
+                    </div>
+                </div>
+                <!---->
+                <div id="divPrueba">
+                    <img src="../src/www/img/lol.webp" id="imagenJuego">
+                    <p id="pNombre">
+                        League of legends
+                    </p>
+                    <p id="pFecha">
+                        13 de diciembre de 2013
+                    </p>
+                    <p id="pRol">
+                        Estrategia, multijugador
+                    </p>
+                    <div class="divBotones">
+                        <span id="borrar">
+                            <img src="../src/www/img/borrar.svg" class="botones">
+                        </span>                     
+                        <span id="jugar">JUGAR</span>
+                        <span id="modificar">
+                            <img src="../src/www/img/modificar.svg" class="botones">
+                        </span>                        
+                    </div>
+                    <!---->
+                    
                 </div>
             </div>
         </main>
+        <script src="../src/www/js/controladores/app.js" type="module"></script>
     </body>
 </html>

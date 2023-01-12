@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PlayGame</title>
+        <meta charset="UTF-8">
+        <link rel="styleSheet" href="../www/css/estilos.css" type="text/css">
+        <link rel="icon" type="image/x-icon" href="../www/img/favicoon.webp">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <img src="../www/img/logopg.PNG" id="prueba">
+            <a href="../index.html">
+                <button id="volver">Volver</button>
+            </a>
+        </header>
+        <main>
+            <div id="divFormulario">
+                <form id="formulario">
+                    <h2 id="tituloFormulario">Añadir juego</h2>
+                    <input type="file" id="imagenJuego"/>
+                    <label id="labelNombre">Nombre</label>
+                    <br><br>
+                    <input type="text" name="nombre" id="inputNombre"/>
+                    <br><br>
+                    <label id="labelPrecio">Precio de venta</label>
+                    <br><br>
+                    <input type="number" id="inputPrecio"/>
+                    <br><br>
+                    <label id="labelFecha">Fecha de lanzamiento</label>
+                    <br><br>
+                    <input type="date" id="inputFecha"/>
+                    <br><br>
+                    <label id="labelDescripcion">Descripción</label>
+                    <br><br>
+                    <textarea id="areaDescripcion"></textarea>
+                    <br><br>
+                    <label id="labelRoles">Roles del juego</label>
+                    <br><br>
+                    <div id="divCheck">
+                        <span class="roles">Acción</span>
+                        <input type="checkbox" class="checkbox"/>
+                        <span class="roles">Aventura</span>
+                        <input type="checkbox" class="checkbox"/>
+                        <span class="roles">Multijugador</span>
+                        <input type="checkbox" class="checkbox"/>
+                    </div>
+                    <br><br>
+                    <label id="labelSelect">¿Quieres publicar tu juego ahora?</label>
+                    <br><br>
+                    <span id="publicarSi">Si, publicar ahora</span>
+                    <input type="radio">
+                    <br><br>
+                    <span id="publicarNo">No, más tarde</span>
+                    <input type="radio"/>
+                    <br><br><br><br>
+                    <button id="btnAnadir">Añadir</button>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

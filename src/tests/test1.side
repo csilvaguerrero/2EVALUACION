@@ -1,0 +1,106 @@
+{
+  "id": "ace0de90-54a6-4d9f-b0ec-26ddcfa35338",
+  "version": "2.0",
+  "name": "Sprint1",
+  "url": "http://18.2daw.esvirgua.com/DWEC/2EVALUACION/src/",
+  "tests": [{
+    "id": "0fafa7d1-964f-4bd8-869e-e145f230c8a0",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "528dbbf0-9294-41b5-8f4e-1acd2a45ce68",
+    "name": "test1",
+    "commands": [{
+      "id": "2bd82766-5537-4320-a06a-a147969cffd9",
+      "comment": "",
+      "command": "open",
+      "target": "http://18.2daw.esvirgua.com/DWEC/2EVALUACION/src/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb548093-58c1-4df6-a7cb-2c7c6f56adf3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "02b77fd6-2dea-4a6a-9821-2ded1ad55293",
+      "comment": "",
+      "command": "click",
+      "target": "id=consultarJuegos",
+      "targets": [
+        ["id=consultarJuegos", "id"],
+        ["css=#consultarJuegos", "css:finder"],
+        ["xpath=//button[@id='consultarJuegos']", "xpath:attributes"],
+        ["xpath=//div[@id='divIntroduccion']/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Comenzar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "acac814f-bea2-457b-8525-06be2c05a82c",
+      "comment": "",
+      "command": "click",
+      "target": "id=anadirJuego",
+      "targets": [
+        ["id=anadirJuego", "id"],
+        ["css=#anadirJuego", "css:finder"],
+        ["xpath=//button[@id='anadirJuego']", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "05c961f6-1355-45f1-b3e1-32dbff663698",
+      "comment": "",
+      "command": "click",
+      "target": "id=btnAnadir",
+      "targets": [
+        ["id=btnAnadir", "id"],
+        ["css=#btnAnadir", "css:finder"],
+        ["xpath=//button[@id='btnAnadir']", "xpath:attributes"],
+        ["xpath=//div[@id='divFormulario']/button", "xpath:idRelative"],
+        ["xpath=//main/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Añadir')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "90416ceb-5c21-4dcc-a067-d56bad6b68e4",
+      "comment": "",
+      "command": "click",
+      "target": "id=anadirJuego",
+      "targets": [
+        ["id=anadirJuego", "id"],
+        ["css=#anadirJuego", "css:finder"],
+        ["xpath=//button[@id='anadirJuego']", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'+')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c41524eb-a0ae-499d-bce5-d8a3c35a63fd",
+      "comment": "",
+      "command": "click",
+      "target": "id=volver",
+      "targets": [
+        ["id=volver", "id"],
+        ["css=#volver", "css:finder"],
+        ["xpath=//button[@id='volver']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Volver')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "369a3aa3-58b9-45bd-a7c6-522edab7f6d8",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["0fafa7d1-964f-4bd8-869e-e145f230c8a0"]
+  }],
+  "urls": ["http://18.2daw.esvirgua.com/DWEC/2EVALUACION/src/"],
+  "plugins": []
+}
