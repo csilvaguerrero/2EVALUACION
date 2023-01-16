@@ -8,7 +8,7 @@ export class VistaCrud extends Vista{
 
         super(div)
         this.controlador = controlador
-
+        this.modelo = this.controlador.getModelo()
      
         
         this.btnAnadir = document.getElementById('anadirJuego')

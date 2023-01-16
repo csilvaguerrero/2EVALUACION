@@ -93,6 +93,13 @@ class Controlador{
         this.btnVolver.mostrar(true)
     }
 
+
+    getModelo(){
+
+        return this.modelo
+        
+    }
+
 }
 
 const app = new Controlador()

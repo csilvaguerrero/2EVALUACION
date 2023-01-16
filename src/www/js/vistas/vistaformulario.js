@@ -13,19 +13,27 @@ export class VistaFormulario extends Vista{
 
         super(div)
         this.controlador = controlador
+        this.modelo = this.controlador.getModelo()
         
+
+        this.iNombre = 
+
+
+
+
         this.btnAceptar = document.getElementById('btnAnadir')
         this.btnVolver = document.getElementById('volver')
 
-        this.btnAceptar.addEventListener('click', this.mostrarJuegos.bind(this))
+        this.btnAceptar.addEventListener('click', this.enviarDatos.bind(this))
         this.btnVolver.addEventListener('click', this.mostrarJuegos.bind(this))
     }
     /**
      * Mostrará la vista de los juegos mediante la pulsación de un button.
      */
-    mostrarJuegos(){
+     enviarDatos(){
 
         this.controlador.vistaJuegos()
+        this.controlador.datos()
     }
 
 

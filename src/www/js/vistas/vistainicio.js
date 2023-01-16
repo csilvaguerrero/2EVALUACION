@@ -12,10 +12,12 @@ export class VistaInicio extends Vista{
 
         super(div)
         this.controlador = controlador
+        this.modelo = this.controlador.getModelo()
 
         this.btnCRUD = document.getElementById('consultarJuegos')
         this.btnCRUD.addEventListener('click', this.mostrarJuegos.bind(this))
     }
+    
     /**
      * Mostrará la vista de los juegos cuando se ejecute mediante la pulsación de un button.
      */
