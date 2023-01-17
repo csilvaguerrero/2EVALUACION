@@ -7,6 +7,7 @@ export class Modelo{
         this.lista = []
 		this.callbacks = [] 
         this.conexionBD()
+
     }
 
     /*Conexión con la base de datos*/
@@ -16,12 +17,12 @@ export class Modelo{
 
 		if(window.indexedDB){
 
-			const respuesta = indexedDB.open("DatosJuegos",1);
+			const respuesta = indexedDB.open("playgame",1);
 		
 			respuesta.onsuccess = (event) => {
 				
 				this.baseDatos = event.target.result		
-				//this.obtenerRegistro()
+				this.obtenerDatos()
                 console.log('Conectado')
 
 			}
@@ -33,7 +34,7 @@ export class Modelo{
 			respuesta.onupgradeneeded = (evt) => {
 				
 				this.baseDatos=evt.target.result
-				this.baseDatos.createObjectStore('Juegos',{keyPath:'id', autoIncrement:true})
+				this.baseDatos.createObjectStore('juegos',{keyPath:'id', autoIncrement:true})
                 console.log('Creada')
 				
 			}
@@ -41,9 +42,9 @@ export class Modelo{
     }
 
     /*Sacamos todos los datos presentes en la base de datos*/
-    obtenerRegistro(){
+    obtenerDatos(){
         
-		const peticion = this.baseDatos.transaction('DatosJuegos', 'readonly').objectStore('Juegos').getAll();
+		const peticion = this.baseDatos.transaction('juegos', 'readonly').objectStore('juegos').getAll();
 		
 		peticion.onsuccess = () => {
 			this.lista = peticion.result;
@@ -53,6 +54,54 @@ export class Modelo{
 			console.error("No se ha podido conectar")
 		}
 	}
+
+	/*Añade el juego creado a la base de datos*/
+	anadirDatos(nombre, precio, fecha, descripcion, publicar, imagen){
+
+		if (imagen)
+		{
+			let reader = new FileReader()
+			reader.readAsDataURL(imagen)
+			reader.onload = () =>
+			{
+				let obj = {
+					nombre: nombre,
+					precio: precio,
+					fecha: fecha,
+					descripcion: descripcion,
+					publicar: publicar, 
+					imagen : reader.result
+				}
+				const almacenar = this.baseDatos.transaction('juegos','readwrite').objectStore('juegos').add(obj);
+	
+				almacenar.onsuccess = () => {
+					console.log('AÑADIDO CON IMAGEN')
+					this.obtenerDatos()
+				}
+					
+			}
+		}
+		else
+		{
+			let obj = {
+				nombre: nombre,
+				precio: precio,
+				fecha: fecha,
+				descripcion: descripcion,
+				publicar: publicar				
+			}
+			const almacenar = this.baseDatos.transaction('juegos','readwrite').objectStore('juegos').add(obj);
+
+			almacenar.onsuccess = () => {
+				console.log('AÑADIDO SIN IMAGEN')
+				this.obtenerDatos()
+			}
+			
+		}
+	
+
+	}
+	
 
     registrar(callback){
 
@@ -70,6 +119,6 @@ export class Modelo{
     getDatos(){
 
         return this.lista
-
+		
      }
 }

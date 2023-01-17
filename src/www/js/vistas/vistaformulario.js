@@ -16,24 +16,31 @@ export class VistaFormulario extends Vista{
         this.modelo = this.controlador.getModelo()
         
 
-        this.iNombre = 
-
-
-
+        this.nombre = document.getElementById('inputNombre')
+        this.precio = document.getElementById('inputPrecio')
+        this.fecha = document.getElementById('inputFecha')
+        this.descripcion = document.getElementById('areaDescripcion')
+        this.publicar = document.getElementById('selectPublicar')
+       // this.rol = document.getElementById('Accion')
+        this.imagen = document.getElementById('imagenJuego')
 
         this.btnAceptar = document.getElementById('btnAnadir')
         this.btnVolver = document.getElementById('volver')
 
-        this.btnAceptar.addEventListener('click', this.enviarDatos.bind(this))
+        this.btnAceptar.addEventListener('click', this.mostrarJuegos.bind(this))
         this.btnVolver.addEventListener('click', this.mostrarJuegos.bind(this))
     }
+
     /**
      * Mostrará la vista de los juegos mediante la pulsación de un button.
      */
-     enviarDatos(){
+     mostrarJuegos(){
 
         this.controlador.vistaJuegos()
-        this.controlador.datos()
+        this.controlador.altaJuego(this.nombre.value, this.precio.value, this.fecha.value, this.descripcion.value, this.publicar.value, this.imagen.files[0])
+
+       
+        
     }
 
 

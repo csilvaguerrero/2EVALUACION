@@ -94,6 +94,15 @@ class Controlador{
     }
 
 
+    //, descripcion, publicar, imagen
+    altaJuego(nombre, precio, fecha, descripcion, publicar, imagen){
+
+        console.log('llego al controlador')
+        this.modelo.anadirDatos(nombre, precio, fecha, descripcion, publicar, imagen)
+       
+    }
+
+
     getModelo(){
 
         return this.modelo

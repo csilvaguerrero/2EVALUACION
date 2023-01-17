@@ -54,7 +54,7 @@
                     <br><br>
                     <div id="divCheck">
                         <span class="roles">Acción</span>
-                        <input type="checkbox" class="checkbox"/>
+                        <input type="checkbox" class="checkbox" id="Accion"/>
                         <span class="roles">Aventura</span>
                         <input type="checkbox" class="checkbox"/>
                         <span class="roles">Multijugador</span>
@@ -63,83 +63,79 @@
                     <br><br>
                     <label id="labelSelect">¿Quieres publicar tu juego ahora?</label>
                     <br><br>
-                    <span id="publicarSi">Si, publicar ahora</span>
-                    <input type="radio">
-                    <br><br>
-                    <span id="publicarNo">No, más tarde</span>
-                    <input type="radio"/>
+                    <select id="selectPublicar">
+                        <option value="Si">Si</option>
+                        <option value="No">No</option>
+                    </select>
                     <br><br><br><br>
                 </form>
                 <button id="btnAnadir">Añadir</button>
             </div>
             <div id="divJuegos">
                 <input type="text" id="buscadorJuegos" placeholder="🔍︎   Buscar juego"/>
-                <div id="divPrueba">
-                    <img src="../src/www/img/7days.jfif" id="imagenJuego">
-                    <p id="pNombre">
+                <div class="divPrueba">
+                    <img src="../src/www/img/7days.jfif" class="imagenJuego">
+                    <p class="pNombre">
                         7 days to die
                     </p>
-                    <p id="pFecha">
+                    <p class="pFecha">
                         13 de diciembre de 2013
                     </p>
-                    <p id="pRol">
+                    <p class="pRol">
                         Acción, supervivencia
                     </p>
                     <div class="divBotones">
-                        <span id="borrar">
+                        <span>
                             <img src="../src/www/img/borrar.svg" class="botones">
                         </span>                     
-                        <span id="jugar">JUGAR</span>
-                        <span id="modificar">
+                        <span class="jugar">JUGAR</span>
+                        <span>
                             <img src="../src/www/img/modificar.svg" class="botones">
                         </span>                        
                     </div>
                 </div>
-                <!---->
-                <div id="divPrueba">
-                    <img src="../src/www/img/counter.jpg" id="imagenJuego">
-                    <p id="pNombre">
+                <div class="divPrueba">
+                    <img src="../src/www/img/counter.jpg" class="imagenJuego">
+                    <p class="pNombre">
                         Counter Strike: Global Offensive
                     </p>
-                    <p id="pFecha">
+                    <p class="pFecha">
                         13 de diciembre de 2013
                     </p>
-                    <p id="pRol">
+                    <p class="pRol">
                         Acción, disparo
                     </p>
                     <div class="divBotones">
-                        <span id="borrar">
+                        <span>
                             <img src="../src/www/img/borrar.svg" class="botones">
                         </span>                     
-                        <span id="jugar">JUGAR</span>
-                        <span id="modificar">
+                        <span class="jugar">JUGAR</span>
+                        <span>
                             <img src="../src/www/img/modificar.svg" class="botones">
                         </span>                        
                     </div>
                 </div>
                 <!---->
-                <div id="divPrueba">
-                    <img src="../src/www/img/lol.webp" id="imagenJuego">
-                    <p id="pNombre">
+                <div class="divPrueba">
+                    <img src="../src/www/img/lol.webp" class="imagenJuego">
+                    <p class="pNombre">
                         League of legends
                     </p>
-                    <p id="pFecha">
+                    <p class="pFecha">
                         13 de diciembre de 2013
                     </p>
-                    <p id="pRol">
+                    <p class="pRol">
                         Estrategia, multijugador
                     </p>
                     <div class="divBotones">
-                        <span id="borrar">
+                        <span>
                             <img src="../src/www/img/borrar.svg" class="botones">
                         </span>                     
-                        <span id="jugar">JUGAR</span>
-                        <span id="modificar">
+                        <span class="jugar">JUGAR</span>
+                        <span>
                             <img src="../src/www/img/modificar.svg" class="botones">
                         </span>                        
-                    </div>
-                    <!---->
-                    
+                    </div>                   
                 </div>
             </div>
         </main>

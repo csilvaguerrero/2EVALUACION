@@ -151,7 +151,7 @@ button#anadirJuego:hover{
 }
 
 
-div#divPrueba{
+div.divPrueba{
 
     color: white;
     margin: auto;
@@ -173,7 +173,7 @@ img.botones{
     margin: 10px;
 }
 
-span#jugar{
+span.jugar{
 
     width: 100px;
     background-color: rgba(31, 30, 30, 0.658);
@@ -185,7 +185,7 @@ span#jugar{
 }
 
 
-span#jugar:hover{
+span.jugar:hover{
 
     width: 140px;
     transition: 1s;
@@ -206,7 +206,7 @@ div.divBotones{
     
 }
 
-p#pNombre{
+p.pNombre{
 
     font-weight: bold;
     font-size: 20px;
@@ -215,7 +215,7 @@ p#pNombre{
 
 }
 
-p#pFecha{
+p.pFecha{
     font-size: 15px;
     margin-left: 30px;
     color: rgb(0, 0, 0);
@@ -223,7 +223,7 @@ p#pFecha{
 }
 
 
-p#pRol{
+p.pRol{
 
     display: inline;
     float: right;
@@ -231,7 +231,7 @@ p#pRol{
     margin-right: 10px;
 }
 
-img#imagenJuego{
+img.imagenJuego{
 
     width: 450px;
     height: 226px;
@@ -356,5 +356,12 @@ div#divPrincipal{
 
 
     display: none;
+
+}
+
+select#selectPublicar{
+
+    display: block;
+    margin: auto;
 
 }
