@@ -34,13 +34,10 @@ export class VistaCrud extends Vista{
         this.limpiarPantalla()
 
         let datos = this.modelo.getDatos()
-        
-        console.log(datos)
        
         if (datos != null){
             for(let dato of datos){
 
-                console.log('hay datos')
                 //Div padre
                 let div = document.createElement('div')
                 div.classList.add('divPrueba')

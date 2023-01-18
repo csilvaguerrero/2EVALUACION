@@ -113,7 +113,53 @@ export class Modelo{
 
 	}
 
+	editarJuego(id, nombre, precio, fecha, descripcion, publicar, imagen){
+		
+		const respuesta = this.baseDatos.transaction('juegos','readwrite').objectStore("juegos").get(id)
+			
+		respuesta.onerror = (evento) => {
 
+			console.log("Ha habido un error")
+
+		}
+		respuesta.onsuccess = (evento)=> {
+
+			const juegos = evento.target.result
+				
+			if (imagen)
+			{
+				let reader = new FileReader()
+				reader.readAsDataURL(imagen)
+			
+				reader.onload = () => {
+				
+					juegos.nombre = nombre
+					juegos.precio = precio
+					juegos.fecha = fecha
+					juegos.descripcion = descripcion
+					juegos.publicar = publicar
+					juegos.imagen = reader.result
+
+					const modificacion = this.baseDatos.transaction('juegos','readwrite').objectStore("juegos").put(juegos)
+					this.obtenerDatos()
+				}
+			
+			}
+			else{
+
+				juegos.nombre = nombre
+				juegos.precio = precio
+				juegos.fecha = fecha
+				juegos.descripcion = descripcion
+				juegos.publicar = publicar
+				juegos.imagen = null
+
+					const modificacion = this.baseDatos.transaction('juegos','readwrite').objectStore("juegos").put(juegos)
+					this.obtenerDatos()
+
+			}
+   		 }
+	}
 	
 
     registrar(callback){

@@ -113,6 +113,11 @@ class Controlador{
         this.divFormulario.rellenarFormulario(dato)
     }
 
+    editarJuego(id, nombre, precio, fecha, descripcion, publicar, imagen){
+        
+        this.modelo.editarJuego(id, nombre, precio, fecha, descripcion, publicar, imagen)
+
+    }
 
     getModelo(){
 
