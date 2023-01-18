@@ -78,6 +78,9 @@ export class VistaCrud extends Vista{
 
 
                 let spanBorrar = document.createElement('span')
+
+                spanBorrar.onclick = this.borrarJuego.bind(this, dato.id)
+
                 let imgBorrar = document.createElement('img')
                 imgBorrar.classList.add('botones')
                 imgBorrar.setAttribute('src', '../../../../../2EVALUACION/src/www/img/borrar.svg')
@@ -91,6 +94,9 @@ export class VistaCrud extends Vista{
 
 
                 let spanModificar = document.createElement('span')
+
+                spanModificar.onclick = this.modificarJuego.bind(this, dato)
+
                 let imgModificar = document.createElement('img')
                 imgModificar.classList.add('botones')
                 imgModificar.setAttribute('src', '../../../../../2EVALUACION/src/www/img/modificar.svg')
@@ -109,6 +115,16 @@ export class VistaCrud extends Vista{
         while(this.divJuegos.firstElementChild){
             this.divJuegos.firstElementChild.remove()       
         }
+    }
+
+    borrarJuego(id){
+        this.controlador.borrarJuego(id)
+        this.actualizar()
+    }
+
+    modificarJuego(dato){
+        this.controlador.modificarJuego(dato)
+        this.actualizar()
     }
 
 }

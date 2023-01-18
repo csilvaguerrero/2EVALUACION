@@ -102,6 +102,19 @@ export class Modelo{
 
 	}
 	
+	borrarJuego(id){
+
+		const respuesta = this.baseDatos.transaction('juegos','readwrite').objectStore("juegos").delete(id)
+
+		respuesta.onsuccess = () => {
+			this.obtenerDatos()
+			console.log('SE HA BORRADO')
+		}
+
+	}
+
+
+	
 
     registrar(callback){
 

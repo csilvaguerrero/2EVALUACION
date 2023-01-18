@@ -102,6 +102,17 @@ class Controlador{
        
     }
 
+    borrarJuego(id){
+        this.modelo.borrarJuego(id)
+    }
+
+    modificarJuego(dato){
+        this.ocultarVistas()
+        this.divFormulario.mostrar(true)
+        this.btnVolver.mostrar(true)
+        this.divFormulario.rellenarFormulario(dato)
+    }
+
 
     getModelo(){
 
