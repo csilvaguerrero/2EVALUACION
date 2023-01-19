@@ -56,7 +56,7 @@ export class Modelo{
 	}
 
 	/*Añade el juego creado a la base de datos*/
-	anadirDatos(nombre, precio, fecha, descripcion, publicar, imagen){
+	anadirDatos(nombre, precio, fecha, descripcion, rol, publicar, imagen){
 
 		if (imagen)
 		{
@@ -69,6 +69,7 @@ export class Modelo{
 					precio: precio,
 					fecha: fecha,
 					descripcion: descripcion,
+					rol: rol,
 					publicar: publicar, 
 					imagen : reader.result
 				}
@@ -88,6 +89,7 @@ export class Modelo{
 				precio: precio,
 				fecha: fecha,
 				descripcion: descripcion,
+				rol: rol,
 				publicar: publicar				
 			}
 			const almacenar = this.baseDatos.transaction('juegos','readwrite').objectStore('juegos').add(obj);
@@ -113,7 +115,7 @@ export class Modelo{
 
 	}
 
-	editarJuego(id, nombre, precio, fecha, descripcion, publicar, imagen){
+	editarJuego(id, nombre, precio, fecha, descripcion, rol, publicar, imagen){
 		
 		const respuesta = this.baseDatos.transaction('juegos','readwrite').objectStore("juegos").get(id)
 			
@@ -137,6 +139,7 @@ export class Modelo{
 					juegos.precio = precio
 					juegos.fecha = fecha
 					juegos.descripcion = descripcion
+					juegos.rol = rol
 					juegos.publicar = publicar
 					juegos.imagen = reader.result
 
@@ -151,6 +154,7 @@ export class Modelo{
 				juegos.precio = precio
 				juegos.fecha = fecha
 				juegos.descripcion = descripcion
+				juegos.rol = rol
 				juegos.publicar = publicar
 				juegos.imagen = null
 

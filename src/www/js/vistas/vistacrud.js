@@ -46,18 +46,21 @@ export class VistaCrud extends Vista{
         if (datos != null){
             for(let dato of datos){
 
-                //Div padre
                 let div = document.createElement('div')
                 div.classList.add('divPrueba')
                 div.style.border = "5px solid white"
                 this.divJuegos.appendChild(div)
 
-                //Imagen del div padre
                 let img = document.createElement('img')
                 
                 if (dato.imagen){
                     img.classList.add('imagenJuego')
                     img.setAttribute('src', dato.imagen)
+                    div.appendChild(img)
+                }
+                else{
+                    img.classList.add('imagenJuego')
+                    img.setAttribute('src', '../../img/vacio.png')
                     div.appendChild(img)
                 }
 
@@ -74,7 +77,7 @@ export class VistaCrud extends Vista{
 
                 let rol = document.createElement('p')
                 rol.classList.add('pRol')
-                rol.textContent = 'Acción'
+                rol.textContent = dato.rol
                 div.appendChild(rol)
 
 
@@ -111,7 +114,7 @@ export class VistaCrud extends Vista{
             }
         }
         else{
-            console.log('No hay datos en IndexedDB')
+            console.log('no hay na')
         }
     }
 

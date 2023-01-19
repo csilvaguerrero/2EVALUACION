@@ -25,46 +25,54 @@
                 </div>
             </div>
             <div id="divFormulario">
-                <div id="formulario">
-                    <h2 id="tituloFormulario">Añadir juego</h2>
-                    <input type="file" id="imagenJuego"/>
-                    <label id="labelNombre">Nombre</label>
-                    <br><br>
-                    <input type="text" name="nombre" id="inputNombre"/>
-                    <br><br>
-                    <label id="labelPrecio">Precio de venta</label>
-                    <br><br>
+                <h2 id="tituloFormulario">AÑADIR JUEGOS</h2>
+                <input type="file" id="imagenJuego"/>
+                <label for="imagenJuego" id="labelImagen">
+                    <img src="./www/img/imagen.svg" class="imagenLabel">
+                    Selecciona una imagen
+                    <img src="./www/img/imagen.svg" class="imagenLabel">
+                </label>
+                <label for=inputNombre class="labelFormulario">
+                    Nombre
+                    <input type="text" id="inputNombre"/>
+                </label>
+                <br><br>
+                <label for="inputPrecio" class="labelFormulario">
+                    Precio de venta
                     <input type="number" id="inputPrecio"/>
-                    <br><br>
-                    <label id="labelFecha">Fecha de lanzamiento</label>
-                    <br><br>
+                </label>
+                <br><br>
+                <label class="labelFormulario" for="inputFecha">
+                    Fecha de lanzamiento
                     <input type="date" id="inputFecha"/>
-                    <br><br>
-                    <label id="labelDescripcion">Descripción</label>
-                    <br><br>
+                </label>
+                <br><br>
+                <label class="labelFormulario" for="areaDescripcion">
+                    Descripción
                     <textarea id="areaDescripcion"></textarea>
-                    <br><br>
-                    <label id="labelRoles">Roles del juego</label>
-                    <br><br>
-                    <div id="divCheck">
-                        <span class="roles">Acción</span>
-                        <input type="checkbox" class="checkbox" id="Accion"/>
-                        <span class="roles">Aventura</span>
-                        <input type="checkbox" class="checkbox"/>
-                        <span class="roles">Multijugador</span>
-                        <input type="checkbox" class="checkbox"/>
-                    </div>
-                    <br><br>
-                    <label id="labelSelect">¿Quieres publicar tu juego ahora?</label>
-                    <br><br>
+                </label>
+                <br><br>
+                <label class="labelFormulario">
+                    Rol del juego
+                    <select id="selectFormulario">
+                        <option value="Acción">Acción</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Misterio">Misterio</option>
+                        <option value="Miedo">Miedo</option>
+                        <option value="Ficción">Ficción</option>
+                    </select>
+                </label>
+                <br><br>
+                <label class="labelFormulario" for="selectPublicar">
+                    ¿Quieres publicar tu juego ahora?
                     <select id="selectPublicar">
                         <option value="Si">Si</option>
                         <option value="No">No</option>
                     </select>
-                    <br><br><br><br>
-                    <button id="btnAnadir">Añadir</button>
-                    <button id="btnModificar">Modificar</button>
-                </div>
+                </label>
+                <br><br><br><br>
+                <button id="btnAnadir">Añadir</button>
+                <button id="btnModificar">Modificar</button>
             </div>
             <div id="divJuegos">
                 <input type="text" id="buscadorJuegos" placeholder="🔍︎   Buscar juego"/>

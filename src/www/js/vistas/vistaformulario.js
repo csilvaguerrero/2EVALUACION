@@ -21,8 +21,8 @@ export class VistaFormulario extends Vista{
         this.precio = document.getElementById('inputPrecio')
         this.fecha = document.getElementById('inputFecha')
         this.descripcion = document.getElementById('areaDescripcion')
+        this.rol = document.getElementById('selectFormulario')
         this.publicar = document.getElementById('selectPublicar')
-       // this.rol = document.getElementById('Accion')
         this.imagen = document.getElementById('imagenJuego')
 
         this.btnAceptar = document.getElementById('btnAnadir')
@@ -42,12 +42,26 @@ export class VistaFormulario extends Vista{
      anadirJuego(){
 
         this.controlador.vistaJuegos()
-        this.controlador.altaJuego(this.nombre.value, this.precio.value, this.fecha.value, this.descripcion.value, this.publicar.value, this.imagen.files[0])
+        this.controlador.altaJuego(this.nombre.value, this.precio.value, this.fecha.value, this.descripcion.value, this.rol.value, this.publicar.value, this.imagen.files[0])
+        this.vaciarCampos()
         
     }
 
     mostrarJuegos(){
+
         this.controlador.vistaJuegos()
+        this.vaciarCampos()
+       
+    }
+
+    vaciarCampos(){
+        this.nombre.value = ""
+        this.precio.value = ""
+        this.fecha.value = ""
+        this.descripcion.value = ""
+        this.rol.value = ""
+        this.publicar.value = ""
+        this.imagen = null;
     }
 
     rellenarFormulario(dato){
@@ -57,6 +71,7 @@ export class VistaFormulario extends Vista{
         this.precio.value = dato.precio
         this.fecha.value = dato.fecha
         this.descripcion.value = dato.descripcion
+        this.rol.value = dato.rol
         this.publicar.value = dato.publicar
 
         this.btnAceptar.style.display = "none"
@@ -66,7 +81,7 @@ export class VistaFormulario extends Vista{
 
     editarJuego(){
 
-        this.controlador.editarJuego(this.id, this.nombre.value, this.precio.value, this.fecha.value, this.descripcion.value, this.publicar.value, this.imagen.files[0])
+        this.controlador.editarJuego(this.id, this.nombre.value, this.precio.value, this.fecha.value, this.descripcion.value, this.rol.value, this.publicar.value, this.imagen.files[0])
         this.mostrarJuegos()
 
     }

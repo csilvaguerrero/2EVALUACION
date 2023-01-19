@@ -24,7 +24,8 @@ img#logo{
 header#cabeceraPagina{
 
     display: none;
-    background-color: rgb(17, 7, 59);  
+    /* background-color: rgb(17, 7, 59);   */
+    background-color: rgb(8, 4, 29);  
     height: 125px;
     width: 100%;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.308)
@@ -252,26 +253,71 @@ img.imagenJuego{
 
 div#divFormulario{
 
-    width: 1200px;
+    width: 100%;
+    background-color: rgb(7, 7, 17);
     margin: auto;
     display: none;
-
+    padding-top: 90px;
+    color: white;
+    
 }
 
 
 h2#tituloFormulario{
 
-   font-size: 50px;
     text-align: center;
-    margin-top: 30px;
+    font-size: 50px;
+    background-color: rgba(255, 255, 255, 0.699);
+    color: rgb(23, 12, 68);
+    width: 450px;
+    padding: 10px;
+    border-radius: 15px;
+    margin: auto;
 }
 
-input#imagenJuego{
+input[type="file"]{
     
-    display: block;
+    display: none;
+
+}
+
+label#labelImagen{
+
+    color: white;
+    height: 60px;
+    width: 750px;
+    background-color: rgb(18, 6, 51);   
     margin: auto;
-    margin-top: 70px;
-    margin-bottom: 70px;
+    font-size: 35px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+label#labelImagen:hover{
+
+    width: 790px;
+    height: 80px;
+    background-color: rgb(26, 15, 56);   
+    transition: 1s;
+    font-size: 40px;
+}
+
+img.imagenLabel{
+
+    width: 30px;
+    height: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+
 }
 
 label#labelNombre, #labelPrecio, #labelFecha, #labelDescripcion, #labelRoles, #labelSelect{
@@ -283,20 +329,38 @@ label#labelNombre, #labelPrecio, #labelFecha, #labelDescripcion, #labelRoles, #l
 
 }
 
-input#inputNombre{
+label.labelFormulario{
+
     display: block;
     margin: auto;
-    width: 700px;
-    height: 30px;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+
+input#inputNombre{
+
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    width: 900px;
+    height: 43px;
+    padding-left: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+
 }
 
 input#inputPrecio{
 
     display: block;
     margin: auto;
-    width: 300px;
-    height: 70px;
+    width: 500px;
+    height: 40px;
     font-size: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
     text-align: center;
 }
 
@@ -305,8 +369,12 @@ input#inputFecha{
 
     display: block;
     margin: auto;
-    width: 200px;
-    height: 30px;
+    width: 400px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
 
 }
 
@@ -316,9 +384,23 @@ textarea#areaDescripcion{
     margin: auto;
     width: 800px;
     height: 300px;
+    margin-top: 25px;
     font-size: 30px;
+    padding: 20px;
 
 }
+
+select#selectFormulario{
+
+    display: block;
+    margin: auto;
+    width: 1000px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 20px;
+
+}
+
 
 div#divCheck{
 
@@ -365,13 +447,21 @@ select#selectPublicar{
 
     display: block;
     margin: auto;
+    margin-top: 30px;
+    width: 230px;
+    height: 40px;
+    font-size: 20px;
 
 }
 
 
 div#formulario{
 
-    
 
-
+    width: 1400px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #192b5c;
+    border-radius: 40px;
+    margin: auto;
 }

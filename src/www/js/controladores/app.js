@@ -94,10 +94,10 @@ class Controlador{
     }
 
 
-    //, descripcion, publicar, imagen
-    altaJuego(nombre, precio, fecha, descripcion, publicar, imagen){
+    
+    altaJuego(nombre, precio, fecha, descripcion, rol, publicar, imagen){
 
-        this.modelo.anadirDatos(nombre, precio, fecha, descripcion, publicar, imagen)
+        this.modelo.anadirDatos(nombre, precio, fecha, descripcion, rol, publicar, imagen)
        
     }
 
@@ -112,9 +112,9 @@ class Controlador{
         this.divFormulario.rellenarFormulario(dato)
     }
 
-    editarJuego(id, nombre, precio, fecha, descripcion, publicar, imagen){
+    editarJuego(id, nombre, precio, fecha, descripcion, rol, publicar, imagen){
         
-        this.modelo.editarJuego(id, nombre, precio, fecha, descripcion, publicar, imagen)
+        this.modelo.editarJuego(id, nombre, precio, fecha, descripcion, rol, publicar, imagen)
 
     }
 
