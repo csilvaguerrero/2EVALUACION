@@ -10,8 +10,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <img src="../src/www/img/logopg.PNG" id="prueba">
+        <header id="cabeceraPagina">
+            <img src="../src/www/img/logopg.PNG" id="logo">
             <button id="volver">Volver</button>
             <button id="anadirJuego">+</button>
         </header>
@@ -21,17 +21,11 @@
                     <img src="../src/www/img/logo.png" id="piepagina">
                 </div>
                 <div id="divIntroduccion">
-                    <p>
-                        PlayGame es una plataforma pública de videojuegos gratuitos en la que puedes confiar para poder subir tu propio videojuego y ser utilizado por usuarios de todo el mundo.
-                    </p>
-                    <p id="fraseJugar">
-                        ¿A qúe esperas para jugar?
-                    </p>
                     <button id="consultarJuegos">Comenzar</button>
                 </div>
             </div>
             <div id="divFormulario">
-                <form id="formulario">
+                <div id="formulario">
                     <h2 id="tituloFormulario">Añadir juego</h2>
                     <input type="file" id="imagenJuego"/>
                     <label id="labelNombre">Nombre</label>
@@ -68,9 +62,9 @@
                         <option value="No">No</option>
                     </select>
                     <br><br><br><br>
-                </form>
-                <button id="btnAnadir">Añadir</button>
-                <button id="btnModificar">Modificar</button>
+                    <button id="btnAnadir">Añadir</button>
+                    <button id="btnModificar">Modificar</button>
+                </div>
             </div>
             <div id="divJuegos">
                 <input type="text" id="buscadorJuegos" placeholder="🔍︎   Buscar juego"/>

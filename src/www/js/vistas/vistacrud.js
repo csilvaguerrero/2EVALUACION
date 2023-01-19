@@ -9,15 +9,17 @@ export class VistaCrud extends Vista{
         super(div)
         this.controlador = controlador
 
-        /*Observamos al modelo*/
         this.modelo = this.controlador.getModelo()
         this.modelo.registrar(this.actualizar.bind(this))
 
         this.divJuegos = document.getElementById('divJuegos')
+
+        this.header = document.getElementById('cabeceraPagina')
         
         this.btnAnadir = document.getElementById('anadirJuego')
+        this.imgLogo = document.getElementById('logo')
    
-
+        this.imgLogo.addEventListener('click', this.volverInicio.bind(this))
         this.btnAnadir.addEventListener('click', this.mostrarFormulario.bind(this))
         
     }
@@ -26,6 +28,12 @@ export class VistaCrud extends Vista{
 
         this.controlador.vistaFormulario()
 
+    }
+
+    volverInicio(){
+
+        this.controlador.vistaInicio()
+        this.header.style.display = "none"
     }
 
 
@@ -41,6 +49,7 @@ export class VistaCrud extends Vista{
                 //Div padre
                 let div = document.createElement('div')
                 div.classList.add('divPrueba')
+                div.style.border = "5px solid white"
                 this.divJuegos.appendChild(div)
 
                 //Imagen del div padre

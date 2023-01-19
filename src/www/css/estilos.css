@@ -8,18 +8,22 @@
 
 body{
 
-    background-color: rgb(12, 8, 31);
+    /* background-color: rgb(12, 8, 31); */
+    background-image: url("../img/fondo4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
-img#prueba{
+img#logo{
 
     width: 150px;
     height: auto;
 
 }
 
-header{
+header#cabeceraPagina{
 
+    display: none;
     background-color: rgb(17, 7, 59);  
     height: 125px;
     width: 100%;
@@ -28,11 +32,13 @@ header{
 
 img#piepagina{
 
-    width: 650px;
-    height: 160px;
-    margin: auto;
+    width: 680px;
+    background-color: rgba(15, 4, 46, 0.295);
+    border-radius: 30px;
+    height: auto;
     display: block;
-    margin-top: 60px;
+    margin: auto;
+    margin-top: 200px;
 
 }
 
@@ -54,7 +60,7 @@ button#consultarJuegos{
     height: 80px;
     display: block;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 120px;
     text-align: center;
     font-size: 40px;
     font-weight: bold;
@@ -63,19 +69,24 @@ button#consultarJuegos{
     background-color: rgb(43, 8, 131);
     transition: 1s;
     color: white;
+    box-shadow: 5px 5px 5px rgba(29, 8, 78, 0.507);
 
 }
 
 button#consultarJuegos:hover{
 
-    background-color: rgb(22, 13, 43);
+    background-color: rgb(32, 18, 63);
     transition: 1s;
-    color: gray
+    color: white
 
 }
 
 p#fraseJugar{
 
+    background-color: rgb(39, 14, 66);
+    border-radius: 20px;
+    width: 700px;
+    height: 85px;
     margin-top: 150px;
     text-align: center;
     font-size: 45px;
@@ -246,15 +257,6 @@ div#divFormulario{
     display: none;
 
 }
-form#formulario{
-
-    width: 1200px;
-    height: 1600px;
-    margin: auto;
-    margin-top: 50px;
-    background-color: rgba(20, 21, 41, 0.788);
-
-}
 
 
 h2#tituloFormulario{
@@ -363,5 +365,13 @@ select#selectPublicar{
 
     display: block;
     margin: auto;
+
+}
+
+
+div#formulario{
+
+    
+
 
 }
