@@ -38,7 +38,7 @@ export class VistaFormulario extends Vista{
 
     /**
      * Mostrará la vista de los juegos mediante la pulsación de un button.
-     */
+    */
      anadirJuego(){
 
         this.controlador.vistaJuegos()
@@ -47,6 +47,10 @@ export class VistaFormulario extends Vista{
         
     }
 
+
+    /**
+     * Método que nos envía a la vista donde se encuentran los juegos.
+     */
     mostrarJuegos(){
 
         this.controlador.vistaJuegos()
@@ -54,6 +58,9 @@ export class VistaFormulario extends Vista{
        
     }
 
+    /**
+     * Método que vacía los campos del formulario cuando cambiamos de vista.
+     */
     vaciarCampos(){
         this.nombre.value = ""
         this.precio.value = ""
@@ -64,6 +71,12 @@ export class VistaFormulario extends Vista{
         this.imagen = null;
     }
 
+
+    /**
+     * Método que mediante un objeto rellena todos los inputs del formulario, según
+     * los datos del juego a modificar
+     * @param {*} dato 
+     */
     rellenarFormulario(dato){
 
         this.id = dato.id
@@ -79,6 +92,9 @@ export class VistaFormulario extends Vista{
 
     }
 
+    /**
+     * Método que envia los datos modificados del juego al controlador.
+     */
     editarJuego(){
 
         this.controlador.editarJuego(this.id, this.nombre.value, this.precio.value, this.fecha.value, this.descripcion.value, this.rol.value, this.publicar.value, this.imagen.files[0])

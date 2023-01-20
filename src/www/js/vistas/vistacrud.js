@@ -24,22 +24,36 @@ export class VistaCrud extends Vista{
         
     }
   
+    /**
+     * Método que nos envía a la vista del formulario.
+     */
     mostrarFormulario(){
 
         this.controlador.vistaFormulario()
 
     }
 
+    /**
+     * Método que nos envía a la vista inicio de la página.
+     */
     volverInicio(){
 
-        this.controlador.vistaInicio()
+        this.controlador.vistaInicio()      
         this.header.style.display = "none"
     }
 
-
+    /**
+     * Método que actualiza las vistas.
+     */
     actualizar(){
 
         this.limpiarPantalla()
+
+        let buscador = document.createElement('input')
+        buscador.type = "text"
+        buscador.placeholder = "🔍︎   Buscar juego"
+        buscador.setAttribute('id', 'buscadorJuegos')
+        this.divJuegos.appendChild(buscador)
 
         let datos = this.modelo.getDatos()
        
@@ -118,7 +132,9 @@ export class VistaCrud extends Vista{
         }
     }
 
-
+    /**
+     * Método que borra todos los elementos presentes en la vista CRUD.
+     */
     limpiarPantalla(){
 
         while(this.divJuegos.firstElementChild){
@@ -126,11 +142,19 @@ export class VistaCrud extends Vista{
         }
     }
 
+    /**
+     * Método que envía el id del juego que queremos borrar al controlador.
+     * @param {*} id 
+     */
     borrarJuego(id){
         this.controlador.borrarJuego(id)
         this.actualizar()
     }
 
+    /**
+     * Método que envia un objeto con todos los datos del juego a modificar.
+     * @param {*} dato 
+     */
     modificarJuego(dato){
         this.controlador.modificarJuego(dato)
         this.actualizar()

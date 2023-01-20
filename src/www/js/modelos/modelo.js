@@ -10,7 +10,9 @@ export class Modelo{
 
     }
 
-    /*Conexión con la base de datos*/
+    /**
+	 * Método que realiza la conexión con la base de datos.
+	 */
     conexionBD(){
 
         const bd = window.indexedDB
@@ -41,7 +43,9 @@ export class Modelo{
 		}	
     }
 
-    /*Sacamos todos los datos presentes en la base de datos*/
+    /**
+	 * Método que obtiene todos los datos guardados en IndexedDB.
+	 */
     obtenerDatos(){
         
 		const peticion = this.baseDatos.transaction('juegos', 'readonly').objectStore('juegos').getAll();
@@ -55,7 +59,16 @@ export class Modelo{
 		}
 	}
 
-	/*Añade el juego creado a la base de datos*/
+	/**
+	 *  Método que inserta en la base de datos un juego.
+	 * @param {*} nombre 
+	 * @param {*} precio 
+	 * @param {*} fecha 
+	 * @param {*} descripcion 
+	 * @param {*} rol 
+	 * @param {*} publicar 
+	 * @param {*} imagen 
+	 */
 	anadirDatos(nombre, precio, fecha, descripcion, rol, publicar, imagen){
 
 		if (imagen)
@@ -103,7 +116,10 @@ export class Modelo{
 	
 
 	}
-	
+	/**
+	 *  Método que borra el juego que hemos seleccionado a partir de su id.
+	 * @param {*} id 
+	 */
 	borrarJuego(id){
 
 		const respuesta = this.baseDatos.transaction('juegos','readwrite').objectStore("juegos").delete(id)
@@ -115,6 +131,18 @@ export class Modelo{
 
 	}
 
+
+	/**
+	 *  Método que edita el juego según los nuevos valores introduccidos.
+	 * @param {*} id 
+	 * @param {*} nombre 
+	 * @param {*} precio 
+	 * @param {*} fecha 
+	 * @param {*} descripcion 
+	 * @param {*} rol 
+	 * @param {*} publicar 
+	 * @param {*} imagen 
+	 */
 	editarJuego(id, nombre, precio, fecha, descripcion, rol, publicar, imagen){
 		
 		const respuesta = this.baseDatos.transaction('juegos','readwrite').objectStore("juegos").get(id)

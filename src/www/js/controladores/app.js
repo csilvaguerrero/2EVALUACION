@@ -94,17 +94,36 @@ class Controlador{
     }
 
 
-    
+    /**
+     * Envía los datos captados en el formulario al modelo, para que este los inserte en
+     * la base de datos.
+     * @param {*} nombre 
+     * @param {*} precio 
+     * @param {*} fecha 
+     * @param {*} descripcion 
+     * @param {*} rol 
+     * @param {*} publicar 
+     * @param {*} imagen 
+     */
     altaJuego(nombre, precio, fecha, descripcion, rol, publicar, imagen){
 
         this.modelo.anadirDatos(nombre, precio, fecha, descripcion, rol, publicar, imagen)
        
     }
 
+    /**
+     * Envía el id de la fila que queremos borrar, para que el modelo actúe sobre ella y la borre.
+     * @param {*} id 
+     */
     borrarJuego(id){
         this.modelo.borrarJuego(id)
     }
 
+    /**
+     * Manda un objeto a la vista del formulario para rellenar los campos que queremos modificar
+     * con sus valores anteriores.
+     * @param {*} dato 
+     */
     modificarJuego(dato){
         this.ocultarVistas()
         this.divFormulario.mostrar(true)
@@ -112,6 +131,18 @@ class Controlador{
         this.divFormulario.rellenarFormulario(dato)
     }
 
+    /**
+     * Método que envía al modelo todos los datos modificados para editar
+     * la información del juego seleccionado.
+     * @param {*} id 
+     * @param {*} nombre 
+     * @param {*} precio 
+     * @param {*} fecha 
+     * @param {*} descripcion 
+     * @param {*} rol 
+     * @param {*} publicar 
+     * @param {*} imagen 
+     */
     editarJuego(id, nombre, precio, fecha, descripcion, rol, publicar, imagen){
         
         this.modelo.editarJuego(id, nombre, precio, fecha, descripcion, rol, publicar, imagen)

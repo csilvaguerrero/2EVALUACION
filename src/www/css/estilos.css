@@ -25,7 +25,7 @@ header#cabeceraPagina{
 
     display: none;
     /* background-color: rgb(17, 7, 59);   */
-    background-color: rgb(8, 4, 29);  
+    background-color: rgb(28, 18, 80);  
     height: 125px;
     width: 100%;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.308)
@@ -76,6 +76,9 @@ button#consultarJuegos{
 
 button#consultarJuegos:hover{
 
+    width: 360px;
+    height: 95px;
+    font-size: 50px;
     background-color: rgb(32, 18, 63);
     transition: 1s;
     color: white
@@ -259,7 +262,8 @@ div#divFormulario{
     display: none;
     padding-top: 90px;
     color: white;
-    
+    padding-bottom: 50px;
+    /* background-color:rgb(14, 3, 37) */
 }
 
 
@@ -424,7 +428,8 @@ span#publicarSi, #publicarNo{
 
 }
 
-button#btnAnadir, #btnModificar{
+
+button.btnFormulario{
 
     border-radius: 5px;
     border: none;
@@ -433,6 +438,18 @@ button#btnAnadir, #btnModificar{
     width: 200px;
     height: 50px;
     font-size: 25px;
+    /* background-color: rgb(33, 8, 61); */
+    background-color: rgb(18, 6, 51);  
+    color: white;
+    transition: 1s;
+}
+
+button.btnFormulario:hover{
+
+    transition: 1s;
+    width: 250px;
+    height: 65px;
+    font-size: 30px;
 
 }
 
@@ -465,3 +482,5 @@ div#formulario{
     border-radius: 40px;
     margin: auto;
 }
+
+

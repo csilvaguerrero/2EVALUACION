@@ -9,6 +9,10 @@ export class Vista{
 
 	}
 
+	/**
+	 *  Método utilizado para mostrar y ocultar vistas.
+	 * @param {*} ver 
+	 */
 	mostrar(ver){
 
 		if(ver){
