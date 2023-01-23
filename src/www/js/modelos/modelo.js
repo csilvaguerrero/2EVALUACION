@@ -73,10 +73,10 @@ export class Modelo{
 
 		if (imagen)
 		{
-			let reader = new FileReader()
-			reader.readAsDataURL(imagen)
+			/*let reader = new FileReader()
+			reader.readAsDataURL(imagen.val())
 			reader.onload = () =>
-			{
+			{*/
 				let obj = {
 					nombre: nombre,
 					precio: precio,
@@ -84,7 +84,7 @@ export class Modelo{
 					descripcion: descripcion,
 					rol: rol,
 					publicar: publicar, 
-					imagen : reader.result
+					//imagen : reader.result
 				}
 				const almacenar = this.baseDatos.transaction('juegos','readwrite').objectStore('juegos').add(obj);
 	
@@ -93,7 +93,7 @@ export class Modelo{
 					this.obtenerDatos()
 				}
 					
-			}
+			//}
 		}
 		else
 		{

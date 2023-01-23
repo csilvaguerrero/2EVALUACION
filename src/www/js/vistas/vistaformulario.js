@@ -17,23 +17,42 @@ export class VistaFormulario extends Vista{
         
 
         this.id = null
-        this.nombre = document.getElementById('inputNombre')
-        this.precio = document.getElementById('inputPrecio')
+        //this.nombre = document.getElementById('inputNombre')
+        
+        /*this.precio = document.getElementById('inputPrecio')
         this.fecha = document.getElementById('inputFecha')
         this.descripcion = document.getElementById('areaDescripcion')
         this.rol = document.getElementById('selectFormulario')
         this.publicar = document.getElementById('selectPublicar')
-        this.imagen = document.getElementById('imagenJuego')
+        this.imagen = document.getElementById('imagenJuego')*/
 
-        this.btnAceptar = document.getElementById('btnAnadir')
-        this.btnVolver = document.getElementById('volver')
+        this.nombre = $('#inputNombre')
+        this.precio = $('#inputFecha')
+        this.fecha = $('#inputFecha')
+        this.descripcion = $('#areaDescripcion')
+        this.rol = $('#selectFormulario')
+        this.publicar = $('#selectPublicar')
+        this.imagen = $('#imagenJuego')
+
+        //this.btnAceptar = document.getElementById('btnAnadir')
+        //this.btnVolver = document.getElementById('volver')
+
+        this.btnAceptar = $('#btnAnadir')
+        this.btnVolver = $('#volver')
         
-        this.btnModificar = document.getElementById('btnModificar')
-        this.btnModificar.style.display = "none"
+        /*this.btnModificar = document.getElementById('btnModificar')
+        this.btnModificar.style.display = "none"*/
 
-        this.btnAceptar.addEventListener('click', this.anadirJuego.bind(this))
-        this.btnVolver.addEventListener('click', this.mostrarJuegos.bind(this))
-        this.btnModificar.addEventListener('click', this.editarJuego.bind(this))
+        this.btnModificar = $('#btnModificar')
+        this.btnModificar.hide()
+
+        //this.btnAceptar.addEventListener('click', this.anadirJuego.bind(this))
+        //this.btnVolver.addEventListener('click', this.mostrarJuegos.bind(this))
+        this.btnAceptar.click(this.anadirJuego.bind(this))
+        this.btnVolver.click(this.mostrarJuegos.bind(this))
+
+       // this.btnModificar.addEventListener('click', this.editarJuego.bind(this))
+       this.btnModificar.click(this.editarJuego.bind(this))
     }
 
     /**
@@ -42,7 +61,7 @@ export class VistaFormulario extends Vista{
      anadirJuego(){
 
         this.controlador.vistaJuegos()
-        this.controlador.altaJuego(this.nombre.value, this.precio.value, this.fecha.value, this.descripcion.value, this.rol.value, this.publicar.value, this.imagen.files[0])
+        this.controlador.altaJuego(this.nombre.val(), this.precio.val(), this.fecha.val(), this.descripcion.val(), this.rol.val(), this.publicar.val(), this.imagen.val())
         this.vaciarCampos()
         
     }
@@ -62,12 +81,20 @@ export class VistaFormulario extends Vista{
      * Método que vacía los campos del formulario cuando cambiamos de vista.
      */
     vaciarCampos(){
-        this.nombre.value = ""
+       /* this.nombre.value = ""
         this.precio.value = ""
         this.fecha.value = ""
         this.descripcion.value = ""
         this.rol.value = ""
         this.publicar.value = ""
+        this.imagen = null;*/
+
+        this.nombre.val("")
+        this.precio.val("")
+        this.fecha.val("")
+        this.descripcion.val("")
+        this.rol.val("")
+        this.publicar.val("")
         this.imagen = null;
     }
 
@@ -87,8 +114,10 @@ export class VistaFormulario extends Vista{
         this.rol.value = dato.rol
         this.publicar.value = dato.publicar
 
-        this.btnAceptar.style.display = "none"
-        this.btnModificar.style.display = "block"        
+        //this.btnAceptar.style.display = "none"
+        //this.btnModificar.style.display = "block"        
+        this.btnAceptar.hide()
+        this.btnModificar.show()
 
     }
 

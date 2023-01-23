@@ -14,13 +14,23 @@ export class VistaCrud extends Vista{
 
         this.divJuegos = document.getElementById('divJuegos')
 
-        this.header = document.getElementById('cabeceraPagina')
+        //this.divJuegos = $('#divJuegos')
+
+        //this.header = document.getElementById('cabeceraPagina')
         
-        this.btnAnadir = document.getElementById('anadirJuego')
-        this.imgLogo = document.getElementById('logo')
+        this.header = $('#cabeceraPagina')
+
+        //this.btnAnadir = document.getElementById('anadirJuego')
+        //this.imgLogo = document.getElementById('logo')
+
+        this.btnAnadir = $('#anadirJuego')
+        this.imgLogo = $('#logo')
    
-        this.imgLogo.addEventListener('click', this.volverInicio.bind(this))
-        this.btnAnadir.addEventListener('click', this.mostrarFormulario.bind(this))
+        //this.imgLogo.addEventListener('click', this.volverInicio.bind(this))
+        //this.btnAnadir.addEventListener('click', this.mostrarFormulario.bind(this))
+
+        this.imgLogo.click(this.volverInicio.bind(this))
+        this.btnAnadir.click(this.mostrarFormulario.bind(this))
         
     }
   
@@ -39,7 +49,7 @@ export class VistaCrud extends Vista{
     volverInicio(){
 
         this.controlador.vistaInicio()      
-        this.header.style.display = "none"
+        this.header.hide()
     }
 
     /**

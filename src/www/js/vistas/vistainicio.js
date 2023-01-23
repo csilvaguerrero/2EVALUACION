@@ -14,10 +14,13 @@ export class VistaInicio extends Vista{
         this.controlador = controlador
         this.modelo = this.controlador.getModelo()
 
-        this.btnCRUD = document.getElementById('consultarJuegos')
-        this.btnCRUD.addEventListener('click', this.mostrarJuegos.bind(this))
+        //this.btnCRUD = document.getElementById('consultarJuegos')
+        this.btnCRUD = $('#consultarJuegos')
+        //this.btnCRUD.addEventListener('click', this.mostrarJuegos.bind(this))
+        this.btnCRUD.click(this.mostrarJuegos.bind(this))
 
-        this.header = document.getElementById('cabeceraPagina')
+        //this.header = document.getElementById('cabeceraPagina')
+        this.header = $('#cabeceraPagina')
         
     }
     
@@ -27,7 +30,8 @@ export class VistaInicio extends Vista{
     mostrarJuegos(){
 
         this.controlador.vistaJuegos()
-        this.header.style.display = "block"
+        //this.header.style.display = "block"
+        this.header.show()
     }
 
 }
