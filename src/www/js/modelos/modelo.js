@@ -158,10 +158,10 @@ export class Modelo{
 				
 			if (imagen)
 			{
-				let reader = new FileReader()
+				/*let reader = new FileReader()
 				reader.readAsDataURL(imagen)
 			
-				reader.onload = () => {
+				reader.onload = () => {*/
 				
 					juegos.nombre = nombre
 					juegos.precio = precio
@@ -173,7 +173,7 @@ export class Modelo{
 
 					const modificacion = this.baseDatos.transaction('juegos','readwrite').objectStore("juegos").put(juegos)
 					this.obtenerDatos()
-				}
+				//}
 			
 			}
 			else{

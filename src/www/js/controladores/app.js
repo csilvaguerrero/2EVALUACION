@@ -19,7 +19,6 @@ class Controlador{
 
     constructor(){
 
-        //window.onload = this.iniciar.bind(this)
         $(document).ready(this.iniciar.bind(this))
 
     }
@@ -32,18 +31,11 @@ class Controlador{
         
         this.modelo = new Modelo(this)
 
-        //this.divInicio = document.getElementById('divPrincipal')
-        //this.divCRUD = document.getElementById('divJuegos')
-        //this.divFormulario = document.getElementById('divFormulario')
-
         this.divInicio = $('#divPrincipal')
         this.divCRUD = $('#divJuegos')
         this.divFormulario = $('#divFormulario')
        
-
-
-       // this.btnVolver = document.getElementById('volver')
-        //this.btnAnadir = document.getElementById('anadirJuego')
+        
         this.btnVolver = $('#volver')
         this.btnAnadir = $('#anadirJuego')
 

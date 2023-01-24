@@ -12,22 +12,13 @@ export class VistaCrud extends Vista{
         this.modelo = this.controlador.getModelo()
         this.modelo.registrar(this.actualizar.bind(this))
 
-        this.divJuegos = document.getElementById('divJuegos')
-
-        //this.divJuegos = $('#divJuegos')
-
-        //this.header = document.getElementById('cabeceraPagina')
+        this.divJuegos = $('#divJuegos')     
         
         this.header = $('#cabeceraPagina')
-
-        //this.btnAnadir = document.getElementById('anadirJuego')
-        //this.imgLogo = document.getElementById('logo')
 
         this.btnAnadir = $('#anadirJuego')
         this.imgLogo = $('#logo')
    
-        //this.imgLogo.addEventListener('click', this.volverInicio.bind(this))
-        //this.btnAnadir.addEventListener('click', this.mostrarFormulario.bind(this))
 
         this.imgLogo.click(this.volverInicio.bind(this))
         this.btnAnadir.click(this.mostrarFormulario.bind(this))
@@ -59,82 +50,77 @@ export class VistaCrud extends Vista{
 
         this.limpiarPantalla()
 
-        let buscador = document.createElement('input')
-        buscador.type = "text"
-        buscador.placeholder = "🔍︎   Buscar juego"
-        buscador.setAttribute('id', 'buscadorJuegos')
-        this.divJuegos.appendChild(buscador)
+        let buscador = $('<input type=text id=buscadorJuegos placeholder="🔍︎   Buscar juego "/>')
+        this.divJuegos.append(buscador)
+       
 
         let datos = this.modelo.getDatos()
        
         if (datos != null){
             for(let dato of datos){
 
-                let div = document.createElement('div')
-                div.classList.add('divPrueba')
-                div.style.border = "5px solid white"
-                this.divJuegos.appendChild(div)
+                let div = $('<div>')
+                div.addClass("divPrueba")
+                this.divJuegos.append(div)
 
-                let img = document.createElement('img')
+
+                let img = $('<img>')
                 
                 if (dato.imagen){
-                    img.classList.add('imagenJuego')
-                    img.setAttribute('src', dato.imagen)
-                    div.appendChild(img)
+                    img.addClass("imagenJuego")
+                    img.attr("src", dato.imagen)
+                    div.append(img)
                 }
                 else{
-                    img.classList.add('imagenJuego')
-                    img.setAttribute('src', '../../img/vacio.png')
-                    div.appendChild(img)
+                    img.addClass("imagenJuego")
+                    img.attr("src", '../../../../../2EVALUACION/src/www/img/vacio.png')
+                    div.append(img)
                 }
 
-                let pNombre = document.createElement('p')
-                pNombre.classList.add('pNombre')
-                pNombre.textContent = dato.nombre
-                div.appendChild(pNombre)
+                let pNombre = $('<p>')
+                pNombre.addClass("pNombre")
+                pNombre.text(dato.nombre)
+                div.append(pNombre)
 
-                let fecha = document.createElement('p')
-                fecha.classList.add('pFecha')
-                fecha.textContent = dato.fecha
-                div.appendChild(fecha)
-
-
-                let rol = document.createElement('p')
-                rol.classList.add('pRol')
-                rol.textContent = dato.rol
-                div.appendChild(rol)
+                let fecha = $('<p>')
+                fecha.addClass("pFecha")
+                fecha.text(dato.fecha)
+                div.append(fecha)
 
 
-                let divBotones = document.createElement('div')
-                divBotones.classList.add('divBotones')
-                div.appendChild(divBotones)
+                let rol = $('<p>')
+                rol.addClass("pRol")
+                rol.text(dato.rol)
+                div.append(rol)
+
+                let divBotones = $('<div>')
+                divBotones.addClass("divBotones")
+                div.append(divBotones)
 
 
-                let spanBorrar = document.createElement('span')
+                let spanBorrar = $('<span>')
+                spanBorrar.click(this.borrarJuego.bind(this, dato.id))
+ 
+                let imgBorrar = $('<img>')
+                imgBorrar.addClass("botones")
+                imgBorrar.attr("src", '../../../../../2EVALUACION/src/www/img/borrar.svg')
+                spanBorrar.append(imgBorrar)
+                divBotones.append(spanBorrar)
+                
+                let spanJugar = $('<span>')
+                spanJugar.addClass("jugar")
+                spanJugar.text("JUGAR")
+                divBotones.append(spanJugar)
 
-                spanBorrar.onclick = this.borrarJuego.bind(this, dato.id)
 
-                let imgBorrar = document.createElement('img')
-                imgBorrar.classList.add('botones')
-                imgBorrar.setAttribute('src', '../../../../../2EVALUACION/src/www/img/borrar.svg')
-                spanBorrar.appendChild(imgBorrar)
-                divBotones.appendChild(spanBorrar)
+                let spanModificar = $('<span>')
+                spanModificar.click(this.modificarJuego.bind(this, dato))
 
-                let spanJugar = document.createElement('span')
-                spanJugar.classList.add('jugar')
-                spanJugar.textContent = 'JUGAR'
-                divBotones.appendChild(spanJugar)
-
-
-                let spanModificar = document.createElement('span')
-
-                spanModificar.onclick = this.modificarJuego.bind(this, dato)
-
-                let imgModificar = document.createElement('img')
-                imgModificar.classList.add('botones')
-                imgModificar.setAttribute('src', '../../../../../2EVALUACION/src/www/img/modificar.svg')
-                spanModificar.appendChild(imgModificar)
-                divBotones.appendChild(spanModificar)
+                let imgModificar = $('<img>')
+                imgModificar.addClass("botones")
+                imgModificar.attr("src", '../../../../../2EVALUACION/src/www/img/modificar.svg')
+                spanModificar.append(imgModificar)
+                divBotones.append(spanModificar)
             }
         }
         else{
@@ -147,8 +133,8 @@ export class VistaCrud extends Vista{
      */
     limpiarPantalla(){
 
-        while(this.divJuegos.firstElementChild){
-            this.divJuegos.firstElementChild.remove()       
+        if (!this.divJuegos.empty()){
+            this.divJuegos.empty()       
         }
     }
 
