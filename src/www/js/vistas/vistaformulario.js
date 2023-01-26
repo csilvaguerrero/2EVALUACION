@@ -19,6 +19,7 @@ export class VistaFormulario extends Vista{
         this.id = null
 
         this.nombre = $('#inputNombre')
+
         this.precio = $('#inputFecha')
         this.fecha = $('#inputFecha')
         this.descripcion = $('#areaDescripcion')
@@ -102,7 +103,7 @@ export class VistaFormulario extends Vista{
      */
     editarJuego(){
 
-        this.controlador.editarJuego(this.id, this.nombre.val(), this.precio.val(), this.fecha.val(), this.descripcion.val(), this.rol.val(), this.publicar.val(), this.imagen.prop("files")[0])
+        this.controlador.editarJuego(this.id, this.nombre.val(), this.precio.val(), this.fecha.val(), this.descripcion.val(), this.rol.val(), this.publicar.val(), this.imagen.val())
         this.mostrarJuegos()
 
     }

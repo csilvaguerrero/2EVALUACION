@@ -484,3 +484,23 @@ div#formulario{
 }
 
 
+img#gameboy{
+
+    position: absolute;
+    z-index: 1;
+    width: 120px;
+    height: auto;
+    left: 900px;
+    top: 370px;
+
+}
+#dialogo{
+
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    position: relative;
+    top: 300px;
+    right: 900px
+}

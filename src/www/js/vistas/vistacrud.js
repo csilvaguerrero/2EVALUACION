@@ -47,7 +47,11 @@ export class VistaCrud extends Vista{
      * Método que actualiza las vistas.
      */
     actualizar(){
+       
 
+        this.limpiarPantalla()
+
+        let buscador = $('<input type=text id=buscadorJuegos placeholder="🔍︎   Buscar juego "/>')
         
         $( function() {
             var availableTags = [
@@ -78,11 +82,7 @@ export class VistaCrud extends Vista{
               source: availableTags
             });
           } );
-
-        this.limpiarPantalla()
-
-        let buscador = $('<input type=text id=buscadorJuegos placeholder="🔍︎   Buscar juego "/>')
-       
+          
         this.divJuegos.append(buscador)
        
 

@@ -36,6 +36,8 @@ class Controlador{
         this.divFormulario = $('#divFormulario')
        
         
+        $( document ).tooltip();
+
         this.btnVolver = $('#volver')
         this.btnAnadir = $('#anadirJuego')
 
@@ -49,6 +51,8 @@ class Controlador{
 
         this.divInicio.mostrar(true)
         this.fechaUI()
+        this.moverMando()
+        this.dialogo()
     }
 
     /**
@@ -152,6 +156,18 @@ class Controlador{
     fechaUI(){
         this.fecha = $('#inputFecha')
         this.fecha.datepicker()
+    }
+
+    moverMando(){
+        this.gameboy = $('#gameboy')
+        this.gameboy.draggable()
+    }
+
+    dialogo(){
+
+        this.dialogo = $('#dialogo')
+        this.dialogo.dialog()
+
     }
 
     getModelo(){
