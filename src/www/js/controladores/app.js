@@ -48,7 +48,7 @@ class Controlador{
         this.divFormulario = new VistaFormulario(this, this.divFormulario)
 
         this.divInicio.mostrar(true)
-
+        this.fechaUI()
     }
 
     /**
@@ -147,6 +147,11 @@ class Controlador{
         
         this.modelo.editarJuego(id, nombre, precio, fecha, descripcion, rol, publicar, imagen)
 
+    }
+
+    fechaUI(){
+        this.fecha = $('#inputFecha')
+        this.fecha.datepicker()
     }
 
     getModelo(){

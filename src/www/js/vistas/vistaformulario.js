@@ -46,7 +46,7 @@ export class VistaFormulario extends Vista{
      anadirJuego(){
 
         this.controlador.vistaJuegos()
-        this.controlador.altaJuego(this.nombre.val(), this.precio.val(), this.fecha.val(), this.descripcion.val(), this.rol.val(), this.publicar.val(), this.imagen.val())
+        this.controlador.altaJuego(this.nombre.val(), this.precio.val(), this.fecha.val(), this.descripcion.val(), this.rol.val(), this.publicar.val(), this.imagen.prop("files")[0])
         this.vaciarCampos()
         
     }
@@ -102,7 +102,7 @@ export class VistaFormulario extends Vista{
      */
     editarJuego(){
 
-        this.controlador.editarJuego(this.id, this.nombre.val(), this.precio.val(), this.fecha.val(), this.descripcion.val(), this.rol.val(), this.publicar.val(), this.imagen.val())
+        this.controlador.editarJuego(this.id, this.nombre.val(), this.precio.val(), this.fecha.val(), this.descripcion.val(), this.rol.val(), this.publicar.val(), this.imagen.prop("files")[0])
         this.mostrarJuegos()
 
     }

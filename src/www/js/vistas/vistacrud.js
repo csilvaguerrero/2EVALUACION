@@ -48,9 +48,41 @@ export class VistaCrud extends Vista{
      */
     actualizar(){
 
+        
+        $( function() {
+            var availableTags = [
+              "ActionScript",
+              "AppleScript",
+              "Asp",
+              "BASIC",
+              "C",
+              "C++",
+              "Clojure",
+              "COBOL",
+              "ColdFusion",
+              "Erlang",
+              "Fortran",
+              "Groovy",
+              "Haskell",
+              "Java",
+              "JavaScript",
+              "Lisp",
+              "Perl",
+              "PHP",
+              "Python",
+              "Ruby",
+              "Scala",
+              "Scheme"
+            ];
+            buscador.autocomplete({
+              source: availableTags
+            });
+          } );
+
         this.limpiarPantalla()
 
         let buscador = $('<input type=text id=buscadorJuegos placeholder="🔍︎   Buscar juego "/>')
+       
         this.divJuegos.append(buscador)
        
 
@@ -58,6 +90,7 @@ export class VistaCrud extends Vista{
        
         if (datos != null){
             for(let dato of datos){
+
 
                 let div = $('<div>')
                 div.addClass("divPrueba")
@@ -86,7 +119,6 @@ export class VistaCrud extends Vista{
                 fecha.addClass("pFecha")
                 fecha.text(dato.fecha)
                 div.append(fecha)
-
 
                 let rol = $('<p>')
                 rol.addClass("pRol")
