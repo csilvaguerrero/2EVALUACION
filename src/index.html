@@ -4,6 +4,8 @@
         <title>PlayGame</title>
         <meta charset="UTF-8">
         <link rel="styleSheet" href="../src/www/css/estilos.css" type="text/css">
+        <link rel="styleSheet" href="../src/www/assets/jquery-ui-1.13.2.custom/jquery-ui.css" type="text/css">
+        <link rel="styleSheet" href="../src/www/assets/jquery-ui-1.13.2.custom/jquery-ui.theme.css" type="text/css">
         <link rel="icon" type="image/x-icon" href="../src/www/img/favicoon.webp">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,13 +14,13 @@
     <body>
         <header id="cabeceraPagina">
             <img src="../src/www/img/logopg.PNG" id="logo">
-            <button id="volver">Volver</button>
-            <button id="anadirJuego">+</button>
+            <button id="volver" aria-label="Botón para volver a la página de juegos">Volver</button>
+            <button id="anadirJuego" aria-label="Botón para crear un juego">+</button>
         </header>
         <main>
             <div id="divPrincipal">
                 <div id="dialogo">
-                    <table>
+                    <table aria-label="Tiempo de hoy en Badajoz">
                         <tr>
                             <td></td>
                             <td></td>
@@ -29,15 +31,15 @@
                 </div>
                 <div>
                     <img src="../src/www/img/logo.png" id="piepagina">
-                    <img src="www/img/gameboy.webp"/ id="gameboy">
+                    <img src="www/img/gameboy.webp" id="gameboy"/>
                 </div>
                 <div id="divIntroduccion">
-                    <button id="consultarJuegos">Comenzar</button>
+                    <button id="consultarJuegos" aria-label="Botón para ver los juegos" tabindex="1">Comenzar</button>
                 </div>
             </div>
             <div id="divFormulario">
                 <h2 id="tituloFormulario">AÑADIR JUEGOS</h2>
-                <input type="file" id="imagenJuego"/>
+                <input type="file" id="imagenJuego" aria-label="Botón para añadir una imagen del juego"/>
                 <label for="imagenJuego" id="labelImagen">
                     <img src="./www/img/imagen.svg" class="imagenLabel">
                     Selecciona una imagen
@@ -45,48 +47,48 @@
                 </label>
                 <label for=inputNombre class="labelFormulario">
                     Nombre
-                    <input type="text" id="inputNombre" title="Porfavor, introduce tu nombre"/>
+                    <input type="text" id="inputNombre" title="Porfavor, introduce tu nombre" aria-label="Caja para introducir el nombre del juego"/>
                 </label>
                 <br><br>
                 <label for="inputPrecio" class="labelFormulario">
                     Precio de venta
-                    <input type="number" id="inputPrecio" title="Introduce el precio de tu juego"/>
+                    <input type="number" id="inputPrecio" title="Introduce el precio de tu juego" aria-label="Caja para introducir el precio del juego"/>
                 </label>
                 <br><br>
                 <label class="labelFormulario" for="inputFecha">
                     Fecha de lanzamiento
-                    <input type="text" id="inputFecha" title="Introduce la fecha de creación de tu juego"/>
+                    <input type="text" id="inputFecha" title="Introduce la fecha de creación de tu juego" aria-label="Caja para introducir la fecha de lanzamiento del juego"/>
                 </label>
                 <br><br>
                 <label class="labelFormulario" for="areaDescripcion">
                     Descripción
-                    <textarea id="areaDescripcion" title="Introduce una breve descripcion sobre tu juego"></textarea>
+                    <textarea id="areaDescripcion" title="Introduce una breve descripcion sobre tu juego" aria-label="Caja para introducir texto descriptivo de nuestro juego"></textarea>
                 </label>
                 <br><br>
                 <label class="labelFormulario">
                     Rol del juego
-                    <select id="selectFormulario">
-                        <option value="Acción">Acción</option>
-                        <option value="Aventura">Aventura</option>
-                        <option value="Misterio">Misterio</option>
-                        <option value="Miedo">Miedo</option>
-                        <option value="Ficción">Ficción</option>
+                    <select id="selectFormulario" aria-label="Caja para seleccionar el rol de nuestro juego">
+                        <option value="Acción" aria-label="Rol de acción para el juego">Acción</option>
+                        <option value="Aventura" aria-label="Rol de Aventura para el juego">Aventura</option>
+                        <option value="Misterio" aria-label="Rol de Misterio para el juego">Misterio</option>
+                        <option value="Miedo" aria-label="Rol de Miedo para el juego">Miedo</option>
+                        <option value="Ficción" aria-label="Rol de Ficción para el juego">Ficción</option>
                     </select>
                 </label>
                 <br><br>
                 <label class="labelFormulario" for="selectPublicar">
                     ¿Quieres publicar tu juego ahora?
-                    <select id="selectPublicar">
-                        <option value="Si">Si</option>
-                        <option value="No">No</option>
+                    <select id="selectPublicar" aria-label="Seleccionar si quieres que tu juego sea público o no">
+                        <option value="Si" aria-label="Publicar ahora">Si</option>
+                        <option value="No" aria-label="Publicar más tarde">No</option>
                     </select>
                 </label>
                 <br><br><br><br>
-                <button id="btnAnadir" class="btnFormulario">Añadir</button>
-                <button id="btnModificar" class="btnFormulario">Modificar</button>
+                <button id="btnAnadir" class="btnFormulario" aria-label="Botón para crear el juego">Añadir</button>
+                <button id="btnModificar" class="btnFormulario" aria-label="Botón para modificar el juego">Modificar</button>
             </div>
             <div id="divJuegos">
-                <input type="text" id="buscadorJuegos" placeholder="🔍︎   Buscar juego"/>
+                <input type="text" id="buscadorJuegos" placeholder="🔍︎   Buscar juego" aria-label="Caja para buscar los juegos que existen"/>
                 <div class="divPrueba">
                     <img src="../src/www/img/7days.jfif" class="imagenJuego">
                     <p class="pNombre">
@@ -158,6 +160,6 @@
         src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
         crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script src="../src/www/assets/jquery-ui-1.13.2.custom/jquery-ui.js"></script>
     </body>
 </html>

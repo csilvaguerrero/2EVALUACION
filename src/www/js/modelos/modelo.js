@@ -222,7 +222,6 @@ export class Modelo{
 
 			let myArr
 		
-			/**** Parte de AEMET ****/
 			var settings = {
 				"async": true,
 				"crossDomain": true,

@@ -53,6 +53,8 @@ class Controlador{
         this.fechaUI()
         this.moverMando()
         this.dialogo()
+
+        $('#btnAnadir').button()
     }
 
     /**
